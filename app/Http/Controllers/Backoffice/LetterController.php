@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Backoffice;
 
 use App\Contracts\LetterContract;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SuratRequest;
+use App\Models\LetterType;
 use App\Repositories\LetterRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LetterController extends Controller
 {
@@ -28,7 +31,7 @@ class LetterController extends Controller
         return response()->json($result, $result['code']);
     }
 
-    public function createPayload(Request $request)
+    public function createPayload(SuratRequest $request)
     {
         
         $result = $this->letterRepo->createPayload($request->all());

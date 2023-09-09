@@ -4,8 +4,10 @@ namespace App\Repositories;
 
 use App\Contracts\LetterContract;
 use App\Models\Letter;
+use App\Models\LetterType;
 use App\Traits\HttpResponseModel;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class LetterRepository implements LetterContract
 {
@@ -50,6 +52,13 @@ class LetterRepository implements LetterContract
 
   public function createPayload(array $payload)
   {
+        $currentDateTime = Carbon::now();
+        $formattedDateTime = $currentDateTime->format('YmdHis');
+        $name = 'SRT'.'-'.'00'.$payload['id_jenis_surat'].$formattedDateTime;
+        $jsonEncode = json_encode($payload);
+        $fileName = $name. '.json';
+        $payload['nomor_surat'] = $name;
+        Storage::disk('local')->put('jsonLetter/' .$fileName, $jsonEncode);
     try {
         $result = [
           'data' => $this->letterModel->create($payload),
