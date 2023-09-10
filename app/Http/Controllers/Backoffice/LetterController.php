@@ -18,6 +18,12 @@ class LetterController extends Controller
         $this->letterRepo = new LetterRepository;
     }
 
+    public function index()
+    {
+        $result = $this->letterRepo->getAllPayload([]);
+        return view('pages.letter', compact('result'));
+    }
+
     public function getAllData()
     {
         $result = $this->letterRepo->getAllPayload([]);
