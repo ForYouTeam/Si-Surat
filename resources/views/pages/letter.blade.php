@@ -9,6 +9,7 @@
         <div class="card-header" style="background-color: white">
             <h5 class="card-title mb-4 float-left">Table Surat </h5>
             <button class="btn btn-primary float-right">Tambah Data</button>
+            <a href="{{route('surat-kelahiran')}}" class="btn btn-success float-right mr-4">Cetak Surat</a>
         </div>
         <div class="card-body">
           <div class="table-responsive">

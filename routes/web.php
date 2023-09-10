@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/letters', [LetterController::class, 'index'])->name('bo-surat');
 Route::get('/users', [UserController::class, 'index'])->name('bo-akun');
+
+Route::get('/surat-kelahiran', [LetterController::class, 'suratKelahiran'])->name('surat-kelahiran');
