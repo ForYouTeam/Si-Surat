@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SuratRequest;
 use App\Models\LetterType;
 use App\Repositories\LetterRepository;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -43,5 +44,11 @@ class LetterController extends Controller
         $result = $this->letterRepo->createPayload($request->all());
 
         return response()->json($result, $result['code']);
+    }
+
+    public function suratKelahiran()
+    {
+    	$pdf = PDF::loadview('surat.template-surat');
+    	return $pdf->stream('laporan-pegawai.pdf');
     }
 }
