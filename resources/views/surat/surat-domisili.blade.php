@@ -1,4 +1,4 @@
-<div style="width: 90%; margin-left: 2rem; margin-top: 1.5rem; text-align: justify">
+    <div style="width: 90%; margin-left: 2rem; margin-top: 1.5rem; text-align: justify">
     <font size="3">
         &nbsp; &nbsp; &nbsp;Yang bertanda tangan di bawah ini jabatan nama_des, Sebutan_Kecamatan nama_kec, Sebutan_kabupaten nama_kab, Provinsi nama_provinsi menerangkan dengan sebenarnya bahwa pada:
     </font>

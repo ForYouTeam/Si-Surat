@@ -1,6 +1,7 @@
 <div style="width: 90%; margin-left: 2rem; margin-top: 1.5rem; text-align: justify">
     <font size="3">
-        &nbsp; &nbsp; &nbsp;Yang bertanda tangan di bawah ini jabatan nama_des, Sebutan_Kecamatan nama_kec, Sebutan_kabupaten nama_kab, Provinsi nama_provinsi menerangkan dengan sebenarnya bahwa pada:
+        &nbsp; &nbsp; &nbsp;Yang bertanda tangan di bawah ini jabatan nama_des, Sebutan_Kecamatan nama_kec,
+        Sebutan_kabupaten nama_kab, Provinsi nama_provinsi menerangkan dengan sebenarnya bahwa pada:
     </font>
     <table style="font-size: 11pt; margin-top: 0.5rem; margin-left: 2rem; width: 100%">
         <tr>
@@ -60,12 +61,14 @@
     </table>
 </div>
 <div style="width: 90%; margin-left: 2rem; margin-top: 1.5rem; text-align: justify">
-    &nbsp; &nbsp; &nbsp; &nbsp;Bahwa yang tersebut namanya diatas, sepanjang pengetahuan dan penelitian kami hingga saat dikeluarkannya 
+    &nbsp; &nbsp; &nbsp; &nbsp;Bahwa yang tersebut namanya diatas, sepanjang pengetahuan dan penelitian kami hingga saat
+    dikeluarkannya
     surat keterangan ini memang benar Keluarga yang KURANG MAMPU dan tidak memiliki penghasilan tetap.
 </div>
 <div style="width: 90%; margin-left: 2rem; margin-top: 0.5rem; text-align: justify">
     Surat Keterangan ini dibuat untuk keperluan : [keperluan] <br><br>
-    &nbsp; &nbsp; &nbsp; &nbsp;Demikian surat keterangan ini dibuat dengan sebenarnya, untuk dapat dipergunakan sebagaimana mestinya.
+    &nbsp; &nbsp; &nbsp; &nbsp;Demikian surat keterangan ini dibuat dengan sebenarnya, untuk dapat dipergunakan
+    sebagaimana mestinya.
 </div>
 <div style="width: 90%; margin-left: 2rem; margin-top: 0.5rem; text-align: justify">
     <table style="width: 100%">

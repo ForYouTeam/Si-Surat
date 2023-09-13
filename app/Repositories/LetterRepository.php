@@ -25,17 +25,16 @@ class LetterRepository implements LetterContract
       $data = $this->letterModel->all();
 
       return $this->success($data, "success getting data");
-
     } catch (\Throwable $th) {
 
-      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
+      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__);
     }
   }
 
   public function getPayloadById(int $id)
   {
     try {
-      
+
       $find = $this->letterModel->whereId($id)->first();
 
       if (!$find) {
@@ -43,32 +42,30 @@ class LetterRepository implements LetterContract
       }
 
       return $this->success($find, "success getting data");
-
     } catch (\Throwable $th) {
 
-      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
+      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__);
     }
   }
 
   public function createPayload(array $payload)
   {
-        $currentDateTime = Carbon::now();
-        $formattedDateTime = $currentDateTime->format('YmdHis');
-        $name = 'SRT'.'-'.'00'.$payload['id_jenis_surat'].$formattedDateTime;
-        $jsonEncode = json_encode($payload);
-        $fileName = $name. '.json';
-        $payload['nomor_surat'] = $name;
-        Storage::disk('local')->put('jsonLetter/' .$fileName, $jsonEncode);
+    $currentDateTime = Carbon::now();
+    $formattedDateTime = $currentDateTime->format('YmdHis');
+    $name = 'SRT' . '-' . '00' . $payload['id_jenis_surat'] . $formattedDateTime;
+    $jsonEncode = json_encode($payload);
+    $fileName = $name . '.json';
+    $payload['nomor_surat'] = $name;
+    Storage::disk('local')->put('jsonLetter/' . $fileName, $jsonEncode);
     try {
-        $result = [
-          'data' => $this->letterModel->create($payload),
-          'message' => 'Created data successfully'
-        ];
-        
-      return $this->success($result['data'], $result['message']);
+      $result = [
+        'data' => $this->letterModel->create($payload),
+        'message' => 'Created data successfully'
+      ];
 
+      return $this->success($result['data'], $result['message']);
     } catch (\Throwable $th) {
-      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
+      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__);
     }
   }
 
@@ -85,10 +82,9 @@ class LetterRepository implements LetterContract
       $data = $this->letterModel->whereId($id)->delete();
 
       return $this->success($data, "success deleting data");
-
     } catch (\Throwable $th) {
 
-      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
+      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__);
     }
   }
 }
