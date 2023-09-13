@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/letters', [LetterController::class, 'index'])->name('bo-surat');
 Route::get('/letters/add', [LetterController::class, 'addLetter'])->name('add');
+Route::post('/letters/make', [LetterController::class, 'makeLetter'])->name('make');
 // Route::get('/letters/add', [LetterController::class, 'add'])->name('add-surat');
 Route::get('/users', [UserController::class, 'index'])->name('bo-akun');
 

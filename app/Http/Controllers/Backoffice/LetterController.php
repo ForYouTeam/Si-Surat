@@ -9,6 +9,7 @@ use App\Http\Requests\SuratRequest;
 use App\Models\LetterType;
 use App\Repositories\LetterRepository;
 use App\Repositories\LetterTypeRepository;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -70,5 +71,11 @@ class LetterController extends Controller
     public function viewAdd()
     {
         return view('pages.add');
+    }
+
+    public function makeLetter(Request $request)
+    {
+        $pdf = FacadePdf::loadview('surat.template-surat', ['data' => $request->all()]);
+        return $pdf->stream('laporan-pegawai.pdf');
     }
 }

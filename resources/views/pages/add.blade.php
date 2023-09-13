@@ -7,28 +7,41 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header" style="background-color: white">
-                    <h5 class="card-title mb-4 float-left">Tambah {{ $type['data']['name'] }} </h5>
+                    <h5 class="card-title mb-4 float-left">Buat {{ $type['data']['name'] }} </h5>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Nama Pemohon</label>
-                                <input type="hidden" name="letter_type_id" value="{{ $data }}">
-                                <input type="text" class="form-control p-input" name="nama_pemohon"
-                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan nama"
-                                    required>
+                    <form action="{{ route('make') }}" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nama Pemohon</label>
+                                    <input type="hidden" name="letter_type_id" value="{{ $data }}">
+                                    <input type="text" class="form-control p-input" name="nama_pemohon"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan nama"
+                                        required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Tgl Surat</label>
-                                <input type="date" class="form-control p-input" name="tgl_surat" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tgl Surat</label>
+                                    <input type="date" class="form-control p-input" name="tgl_surat" required>
+                                </div>
                             </div>
+                            @switch($data)
+                                @case(1)
+                                    @include('pages.form.domisili')
+                                @break
+
+                                @case(2)
+                                    @include('pages.form.sktm')
+                                @break
+
+                                @default
+                            @endswitch
                         </div>
-                        @include('pages.form.sktm')
-                    </div>
-                    <button class="btn btn-primary float-right">Buat</button>
+                        <button type="submit" class="btn btn-primary float-right">Buat</button>
+                    </form>
                 </div>
             </div>
         </div>

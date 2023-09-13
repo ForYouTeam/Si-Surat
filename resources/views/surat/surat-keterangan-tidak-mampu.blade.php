@@ -8,13 +8,7 @@
             <td style="width: 1.5rem">1.</td>
             <td style="width: 13rem">Nama Lengkap</td>
             <td style="width: 0.4rem">:</td>
-            <td>Hari Kamis</td>
-        </tr>
-        <tr>
-            <td>2.</td>
-            <td>ID BDT</td>
-            <td>:</td>
-            <td>Hari Kamis</td>
+            <td>{{ $data['nama_pemohon'] }}</td>
         </tr>
         <tr>
             <td>3.</td>
