@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(LetterTypeSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(PJSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
