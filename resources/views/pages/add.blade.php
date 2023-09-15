@@ -16,7 +16,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nama Pemohon</label>
-                                    <input type="hidden" name="letter_type_id" value="{{ $data }}">
+                                    <input type="hidden" name="id_jenis_surat" value="{{ $data }}">
                                     <input type="text" class="form-control p-input" name="nama_pemohon"
                                         id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukan nama"
                                         required>

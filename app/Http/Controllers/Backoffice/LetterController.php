@@ -62,9 +62,8 @@ class LetterController extends Controller
     public function addLetter(Request $request)
     {
 
-        $data = $request->letter_type_id;
+        $data = $request->id_jenis_surat;
         $type = $this->letterTypeRepo->getPayloadById($data);
-        // dd($type);
         return view('pages.add')->with(['data' => $data, 'type' => $type]);
     }
 
@@ -75,6 +74,7 @@ class LetterController extends Controller
 
     public function makeLetter(Request $request)
     {
+        $this->letterRepo->createPayload($request->all());
         $pdf = FacadePdf::loadview('surat.template-surat', ['data' => $request->all()]);
         return $pdf->stream('laporan-pegawai.pdf');
     }

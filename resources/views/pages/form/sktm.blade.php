@@ -49,3 +49,17 @@
         </select>
     </div>
 </div>
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Pekerjaan</label>
+        <input type="text" class="form-control p-input" name="pekerjaan" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Pekerjaan" required>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Tempat Tinggal</label>
+        <input type="text" class="form-control p-input" name="tempat_tinggal" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Tempat Tinggal" required>
+    </div>
+</div>

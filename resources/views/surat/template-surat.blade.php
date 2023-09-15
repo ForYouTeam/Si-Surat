@@ -19,10 +19,10 @@
                 </td>
                 <td align="center">
                     <div>
-                        <font size="4">PEMERINTAH KABUPATEN KOTA PALU</font><br>
-                        <font size="4">KECAMATAN ULUJADI</font><br>
-                        <font size="5"><b>DESA PRINDAFAN</b></font><br>
-                        <font size="2">Alamat : Jalan. Gawalise. no 4 Palu Barat Kecamatan balaroa Rt:001, Rw:002
+                        <font size="4">PEMERINTAH KABUPATEN PARIGI MOUTONG</font><br>
+                        <font size="4">KECAMATAN TORUE</font><br>
+                        <font size="5"><b>DESA TOLAI</b></font><br>
+                        <font size="2">Alamat : Parigi Moutong kecamatan Torue, Desa Tolai
                         </font><br>
                     </div>
                 </td>
@@ -47,7 +47,7 @@
     {{-- @include('surat.surat-tanda-terima') --}}
     {{-- @include('surat.surat-keputusan') --}}
     {{-- @include('surat.surat-keterangan-tidak-mampu') --}}
-    @switch($data['letter_type_id'])
+    @switch($data['id_jenis_surat'])
         @case('1')
             @include('surat.surat-domisili')
         @break

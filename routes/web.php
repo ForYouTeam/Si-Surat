@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backoffice\DashboardController;
 use App\Http\Controllers\Backoffice\LetterController;
+use App\Http\Controllers\Backoffice\PjController;
 use App\Http\Controllers\Backoffice\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/letters', [LetterController::class, 'index'])->name('bo-surat');
+Route::get('/pj', [PjController::class, 'index'])->name('bo-pj');
 Route::get('/letters/add', [LetterController::class, 'addLetter'])->name('add');
 Route::post('/letters/make', [LetterController::class, 'makeLetter'])->name('make');
-// Route::get('/letters/add', [LetterController::class, 'add'])->name('add-surat');
 Route::get('/users', [UserController::class, 'index'])->name('bo-akun');
 
 Route::get('/surat-kelahiran', [LetterController::class, 'suratKelahiran'])->name('surat-kelahiran');
