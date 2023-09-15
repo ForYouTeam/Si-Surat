@@ -22,7 +22,7 @@ class LetterRepository implements LetterContract
   {
     try {
 
-      $data = $this->letterModel->all();
+      $data = $this->letterModel->with('letter_type')->get();
 
       return $this->success($data, "success getting data");
     } catch (\Throwable $th) {

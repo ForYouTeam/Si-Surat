@@ -19,10 +19,7 @@ Route::prefix('v1/pj')->controller(PjController::class)->group(function() {
     Route::post('/', 'upsertData');
 });
 
-Route::prefix('v1/letter')->controller(PjController::class)->group(function() {
-    Route::get('/', 'getAllData');
-});
-
 Route::prefix('v1/letter')->controller(LetterController::class)->group(function() {
+    Route::get('/', 'getAllData');
     Route::post('/', 'createPayload');
 });

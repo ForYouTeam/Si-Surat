@@ -29,19 +29,13 @@
                             <thead>
                                 <tr class="text-primary">
                                     <th>No</th>
+                                    <th>Surat</th>
                                     <th>Nama Pemohon</th>
                                     <th>Nomor Surat</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr class="">
-                                    <td>1</td>
-                                    <td>Ahmad</td>
-                                    <td>SRT-002</td>
-                                    <td><a href="#" class="btn btn-primary"><i class="fa fa-print"></i></a>
-                                    </td>
-                                </tr>
+                            <tbody id="tb-body">
                             </tbody>
                         </table>
                     </div>
@@ -66,7 +60,7 @@
 
         function getAllData() {
             // $('#table-data').DataTable().destroy()
-            $.get(`${baseUrl}/api/v1/pj`, (res) => {
+            $.get(`${baseUrl}/api/v1/letter`, (res) => {
                     let data = res.data
 
                     $('#tb-body').html('')
@@ -75,12 +69,11 @@
                             $('#tb-body').append(`
                         <tr>
                             <td style="width: 20px">${i + 1}</td>
-                            <td class="text-capitalize">${d.nama}</td>
-                            <td class="text-capitalize">${d.jabatan}</td>
-                            <td class="text-capitalize">${d.nip}</td>
+                            <td class="text-capitalize">${d.letter_type.name}</td>
+                            <td class="text-capitalize">${d.nama_pemohon}</td>
+                            <td class="text-capitalize">${d.nomor_surat}</td>
                             <td style="width: 250px">
-                                <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>
-                                <button id="btn-del" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+                                <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-print" aria-hidden="true"></i> Cetak</button>
                             </td>
                         </tr>
                     `)

@@ -28,14 +28,13 @@ class LetterController extends Controller
     {
         $result = $this->letterRepo->getAllPayload([]);
         $type = $this->letterTypeRepo->getAllPayload([]);
-        // dd($type['data']);
         return view('pages.letter', compact(['result', 'type']));
     }
 
     public function getAllData()
     {
         $result = $this->letterRepo->getAllPayload([]);
-
+        $jenis = $result['data'][0]['letter_type']['name'];
         return response()->json($result, $result['code']);
     }
 
