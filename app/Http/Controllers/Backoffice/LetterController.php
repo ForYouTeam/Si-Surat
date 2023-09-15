@@ -7,6 +7,7 @@ use App\Contracts\LetterTypeContract;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SuratRequest;
 use App\Models\LetterType;
+use App\Models\PJ;
 use App\Repositories\LetterRepository;
 use App\Repositories\LetterTypeRepository;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
@@ -34,7 +35,6 @@ class LetterController extends Controller
     public function getAllData()
     {
         $result = $this->letterRepo->getAllPayload([]);
-        $jenis = $result['data'][0]['letter_type']['name'];
         return response()->json($result, $result['code']);
     }
 
@@ -73,8 +73,29 @@ class LetterController extends Controller
 
     public function makeLetter(Request $request)
     {
-        $this->letterRepo->createPayload($request->all());
-        $pdf = FacadePdf::loadview('surat.template-surat', ['data' => $request->all()]);
+        $data =  $this->letterRepo->createPayload($request->all());
+        $file_path = 'jsonLetter/' . $data['data']['nomor_surat']. '.json';
+        $file_contents = Storage::disk('local')->get($file_path);
+        $data = json_decode($file_contents);
+        $pj = PJ::latest()->first();
+        $data->pj = $pj['nama'];
+        $data->jabatan = $pj['jabatan'];
+        $data->nip = $pj['nip'];
+        $pdf = FacadePdf::loadview('surat.template-surat', ['data' => $data]);
+        return $pdf->stream('laporan-pegawai.pdf');
+    }
+    
+    public function reMake(Request $request,$name)
+    {
+        $fileName = $name.'.json';
+        $file_path = 'jsonLetter/' . $fileName;
+        $file_contents = Storage::disk('local')->get($file_path);
+        $data = json_decode($file_contents);
+        $pj = PJ::latest()->first();
+        $data->pj = $pj['nama'];
+        $data->jabatan = $pj['jabatan'];
+        $data->nip = $pj['nip'];
+        $pdf = FacadePdf::loadview('surat.template-surat', ['data' => $data]);
         return $pdf->stream('laporan-pegawai.pdf');
     }
 }

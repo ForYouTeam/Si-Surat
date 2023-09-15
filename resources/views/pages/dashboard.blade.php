@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <div class="clearfix">
                         <p class="card-text text-dark">SKTM</p>
-                        <h4 class="bold-text">2</h4>
+                        <h4 class="bold-text">{{$data['sktm']}}</h4>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <div class="clearfix">
                         <p class="card-text text-dark">Surat Keterangan Domisili</p>
-                        <h4 class="bold-text">1</h4>
+                        <h4 class="bold-text">{{$data['domisili']}}</h4>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <div class="clearfix">
                         <p class="card-text text-dark">Surat Keputusan</p>
-                        <h4 class="bold-text">0</h4>
+                        <h4 class="bold-text">{{$data['keputusan']}}</h4>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <div class="clearfix">
                         <p class="card-text text-dark">Surat Tanda Terima</p>
-                        <h4 class="bold-text">0</h4>
+                        <h4 class="bold-text">{{$data['tt']}}</h4>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <div class="card-body">
                     <div class="clearfix">
                         <p class="card-text text-dark">Surat Undangan</p>
-                        <h4 class="bold-text">2</h4>
+                        <h4 class="bold-text">{{$data['undangan']}}</h4>
                     </div>
                 </div>
             </div>

@@ -19,13 +19,15 @@
                   <span class="menu-title">Penanggung Jawab</span>
               </a>
           </li>
+          @if (auth()->user()->scope == "super-admin")
           <li class="nav-item">
-              <hr>
-              <b class="text-gray">MANAGE USER</b>
-              <a class="nav-link" href="{{ route('bo-akun') }}">
-                  <img src="{{ asset('assets/images/icons/10.png') }}" alt="">
-                  <span class="menu-title">Account</span>
-              </a>
-          </li>
+            <hr>
+            <b class="text-gray">MANAGE USER</b>
+            <a class="nav-link" href="{{ route('bo-akun') }}">
+                <img src="{{ asset('assets/images/icons/10.png') }}" alt="">
+                <span class="menu-title">Account</span>
+            </a>
+        </li>
+          @endif
       </ul>
   </nav>

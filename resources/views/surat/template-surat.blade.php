@@ -47,7 +47,7 @@
     {{-- @include('surat.surat-tanda-terima') --}}
     {{-- @include('surat.surat-keputusan') --}}
     {{-- @include('surat.surat-keterangan-tidak-mampu') --}}
-    @switch($data['id_jenis_surat'])
+    @switch($data->id_jenis_surat)
         @case('1')
             @include('surat.surat-domisili')
         @break
@@ -55,8 +55,15 @@
         @case('2')
             @include('surat.surat-keterangan-tidak-mampu')
         @break
-
-        @default
+        @case('3')
+            @include('surat.surat-keputusan')
+        @break
+        @case('4')
+            @include('surat.surat-tanda-terima')
+        @break
+        @case('5')
+            @include('surat.surat-undangan')
+        @break
     @endswitch
 </body>
 

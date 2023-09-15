@@ -66,17 +66,21 @@
                     $('#tb-body').html('')
                     if (data.length > 0) {
                         $.each(data, (i, d) => {
+                            if (d.nomor_surat) { // Check if nomor_surat is defined
                             $('#tb-body').append(`
-                        <tr>
-                            <td style="width: 20px">${i + 1}</td>
-                            <td class="text-capitalize">${d.letter_type.name}</td>
-                            <td class="text-capitalize">${d.nama_pemohon}</td>
-                            <td class="text-capitalize">${d.nomor_surat}</td>
-                            <td style="width: 250px">
-                                <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-print" aria-hidden="true"></i> Cetak</button>
-                            </td>
-                        </tr>
-                    `)
+                                <tr>
+                                    <td style="width: 20px">${i + 1}</td>
+                                    <td class="text-capitalize">${d.letter_type.name}</td>
+                                    <td class="text-capitalize">${d.nama_pemohon}</td>
+                                    <td class="text-capitalize">${d.nomor_surat}</td>
+                                    <td style="width: 250px">
+                                        <a href="/letters/remake/${d.nomor_surat}" id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary">
+                                            <i class="fa fa-print" aria-hidden="true"></i> Cetak
+                                        </a>
+                                    </td>
+                                </tr>
+                            `);
+                            }
                         })
                     } else {
                         $('#tb-body').append(`

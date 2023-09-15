@@ -45,6 +45,7 @@ class UserController extends Controller
 
     public function deleteData(int $id)
     {
-
+        $result = $this->userRepo->deletePayload($id);
+        return response()->json($result, $result['code']);
     }
 }

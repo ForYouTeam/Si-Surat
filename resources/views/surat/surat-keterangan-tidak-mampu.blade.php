@@ -8,49 +8,49 @@
             <td style="width: 1.5rem">1.</td>
             <td style="width: 13rem">Nama Lengkap</td>
             <td style="width: 0.4rem">:</td>
-            <td>{{ $data['nama_pemohon'] }}</td>
+            <td>{{ $data->nama_pemohon }}</td>
         </tr>
         <tr>
             <td>3.</td>
             <td>No.KTP</td>
             <td>:</td>
-            <td>{{ $data['no_ktp'] }}</td>
+            <td>{{ $data->no_ktp }}</td>
         </tr>
         <tr>
             <td>4.</td>
             <td>Tempat / Tanggal Lahir</td>
             <td>:</td>
-            <td>{{ $data['tempat_lahir'] }} / {{ $data['tgl_lahir'] }}</td>
+            <td>{{ $data->tempat_lahir }} / {{ $data->tgl_lahir }}</td>
         </tr>
         <tr>
             <td>5.</td>
             <td>Jenis Kelamin</td>
             <td>:</td>
-            <td>{{ $data['jk'] }}</td>
+            <td>{{ $data->jk }}</td>
         </tr>
         <tr>
             <td>6.</td>
             <td>Kewarganegaraan</td>
             <td>:</td>
-            <td>{{ $data['kewarganegaraan'] }}</td>
+            <td>{{ $data->kewarganegaraan }}</td>
         </tr>
         <tr>
             <td>7.</td>
             <td>Agama</td>
             <td>:</td>
-            <td>{{ $data['agama'] }}</td>
+            <td>{{ $data->agama }}</td>
         </tr>
         <tr>
             <td>8.</td>
             <td>Pekerjaan</td>
             <td>:</td>
-            <td>{{ $data['pekerjaan'] }}</td>
+            <td>{{ $data->pekerjaan }}</td>
         </tr>
         <tr>
             <td>9.</td>
             <td>Tempat Tinggal</td>
             <td>:</td>
-            <td>{{ $data['tempat_tinggal'] }}</td>
+            <td>{{ $data->tempat_tinggal }}</td>
         </tr>
     </table>
 </div>
@@ -68,7 +68,7 @@
     <table style="width: 100%">
         <tr>
             <td style="width: 55%"></td>
-            <td align="center">Desa Tolai, {{ $data['tgl_surat'] }} <br> Penandatangan</td>
+            <td align="center">Desa Tolai, {{ $data->tgl_surat }} <br> Penandatangan</td>
         </tr>
         <tr>
             <td style="height: 100px"></td>
@@ -76,7 +76,7 @@
         </tr>
         <tr>
             <td></td>
-            <td align="center"><u><b>nama pamong</b></u><br>nip nama pamong</td>
+            <td align="center"><u><b> {{$data->pj}} </b></u><br>NIP : {{$data->nip}}</td>
         </tr>
     </table>
 </div>

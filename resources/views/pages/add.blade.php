@@ -36,6 +36,15 @@
                                 @case(2)
                                     @include('pages.form.sktm')
                                 @break
+                                @case(3)
+                                    @include('pages.form.keputusan')
+                                @break
+                                @case(4)
+                                    @include('pages.form.tanda_terima')
+                                @break
+                                @case(5)
+                                    @include('pages.form.undangan')
+                                @break
 
                                 @default
                             @endswitch
