@@ -11,7 +11,7 @@
         <li class="nav-item">
         </li>
         <li class="nav-item">
-            <a class="nav-link profile-pic" onclick="logout()"><i class="fa fa-sign-out"></i></a>
+            <a class="nav-link profile-pic" href="{{route('logout')}}"><i class="fa fa-sign-out"></i></a>
         </li>
         </ul>
         <button class="navbar-toggler navbar-dark navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

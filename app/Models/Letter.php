@@ -14,4 +14,9 @@ class Letter extends Model
         'tgl_surat',
         'nomor_surat',
     ];
+
+    public function letter_type()
+    {
+        return $this->belongsTo(LetterType::class, 'id_jenis_surat');
+    }
 }

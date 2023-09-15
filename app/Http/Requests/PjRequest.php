@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class UserRequest extends FormRequest
+class PjRequest extends FormRequest
 {
     public function authorize()
     {
@@ -16,9 +16,9 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:150',
-            'username' => 'required|max:50',
-            'password' => 'required|max:20|min:5'
+            'nama' => 'required|max:150',
+            'jabatan' => 'required|max:50',
+            'nip' => 'required|max:20|min:5'
         ];
     }
 
