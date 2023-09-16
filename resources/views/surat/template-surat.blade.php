@@ -14,8 +14,8 @@
             <tr>
                 <td style="width: 4rem"></td>
                 <td>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Lambang_Kota_Palu.png/640px-Lambang_Kota_Palu.png"
-                        alt="" style="max-width: 3.5rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Lambang_Kabupaten_Parigi_Moutong.png/640px-Lambang_Kabupaten_Parigi_Moutong.png"
+                        alt="" style="max-width: 3.6rem;">
                 </td>
                 <td align="center">
                     <div>
