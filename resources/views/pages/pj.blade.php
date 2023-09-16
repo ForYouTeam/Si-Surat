@@ -30,46 +30,47 @@
             </div>
         </div>
     </div>
-    <div id="modal-data" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+
+    {{-- modal --}}
+    <div class="modal fade" id="modal-data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-close-area modal-close-df">
-                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-                </div>
-                <div class="modal-body">
-                    <h4 class="" id="modal-title">Formulir Tambah Data</h4>
-                    <hr>
-                    <div class="" style="margin-top: 20px">
-                        <form action="#">
-                            <input type="hidden" class="val" name="id" id="id">
-                            <div class="form-group-inner">
-                                <label style="float: left">Nama</label>
-                                <input type="text" name="nama" id="nama" class="form-control val"
-                                    placeholder="Input disini">
-                                <span class="text-danger alrt" id="alert-nama"></span>
-                            </div>
-                            <div class="form-group-inner">
-                                <label style="float: left">Jabatan</label>
-                                <input type="text" name="jabatan" id="jabatan" class="form-control val"
-                                    placeholder="Input disini">
-                                <span class="text-danger alrt" id="alert-jabatan"></span>
-                            </div>
-                            <div class="form-group-inner">
-                                <label style="float: left">NIP</label>
-                                <input type="text" name="nip" id="nip" class="form-control val"
-                                    placeholder="Input disini">
-                                <span class="text-danger alrt" id="alert-nip"></span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-custon-four btn-md btn-danger">Cancel</button>
-                    <button onclick="postData()" class="btn btn-custon-four btn-md btn-primary">Simpan</button>
+          <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="" id="modal-title">Formulir Tambah Data</h4>
+            </div>
+            <div class="modal-body">
+                <div class="" style="margin-top: 20px">
+                    <form action="#">
+                        <input type="hidden" class="val" name="id" id="id">
+                        <div class="form-group-inner">
+                            <label style="float: left">Nama</label>
+                            <input type="text" name="nama" id="nama" class="form-control val mb-2"
+                                placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-nama"></span>
+                        </div>
+                        <div class="form-group-inner">
+                            <label style="float: left">Jabatan</label>
+                            <input type="text" name="jabatan" id="jabatan" class="form-control val mb-2"
+                                placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-jabatan"></span>
+                        </div>
+                        <div class="form-group-inner">
+                            <label style="float: left">NIP</label>
+                            <input type="text" name="nip" id="nip" class="form-control val"
+                                placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-nip"></span>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-custon-four btn-md btn-danger">Cancel</button>
+                <button onclick="postData()" class="btn btn-custon-four btn-md btn-primary">Simpan</button>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    {{-- end modal --}}
 @endsection
 @section('js')
     <script>

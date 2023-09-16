@@ -19,16 +19,20 @@
         <div class="content-wrapper full-page-wrapper d-flex align-items-center auth-pages">
           <div class="card col-lg-4 mx-auto">
             <div class="card-body px-5 py-5">
-              <h3 class="card-title text-left mb-3">Login</h3>
+              <h3 class="card-title text-center mb-3">LOGIN</h3>
+              <h2 class="card-title text-center"><b>SIPEDES</b></h2>
+              <center><span class="text-primary">(Sistem Pembuatan Surat Desa)</span></center>
               @if ($errors->has('email'))
                     <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                   @endif
               <form action="{{route('login')}}" method="POST">
                 @csrf
                 <div class="form-group">
+                  <label for="">Username</label>
                   <input type="text" class="form-control p_input" name="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
+                  <label for="">Password</label>
                   <input type="password" class="form-control p_input" name="password" placeholder="Password"required>
                 </div>
                 <div class="text-center">
