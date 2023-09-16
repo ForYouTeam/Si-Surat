@@ -19,6 +19,7 @@
                                     <th>Nama</th>
                                     <th>Jabatan</th>
                                     <th>Nip</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody id="tb-body">
@@ -85,38 +86,27 @@
         })
 
         function getAllData() {
-            // $('#table-data').DataTable().destroy()
+            $('#tabel-data').DataTable().destroy()
             $.get(`${baseUrl}/api/v1/pj`, (res) => {
-                    let data = res.data
-
+                let data = res.data
                     $('#tb-body').html('')
                     if (data.length > 0) {
                         $.each(data, (i, d) => {
                             $('#tb-body').append(`
-                        <tr>
-                            <td style="width: 20px">${i + 1}</td>
-                            <td class="text-capitalize">${d.nama}</td>
-                            <td class="text-capitalize">${d.jabatan}</td>
-                            <td class="text-capitalize">${d.nip}</td>
-                            <td style="width: 250px">
-                                <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>
-                                <button id="btn-del" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
-                            </td>
-                        </tr>
-                    `)
-                        })
-                    } else {
-                        $('#tb-body').append(`
-                <tr>
-                    <td colspan="6" style="text-align: center">
-                        Data tidak ditemukan <br>
-                        Silahkan tambah data terlebih dahulu
-                    </td>
-                </tr>
-            `)
+                                <tr>
+                                    <td style="width: 20px">${i + 1}</td>
+                                    <td class="text-capitalize">${d.nama}</td>
+                                    <td class="text-capitalize">${d.jabatan}</td>
+                                    <td class="text-capitalize">${d.nip}</td>
+                                    <td style="width: 250px">
+                                        <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>
+                                        <button id="btn-del" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+                                    </td>
+                                </tr>
+                            `);
+                        });
                     }
-
-                    // $('#table-data').DataTable();
+                    $('#tabel-data').DataTable()
                 })
                 .fail((err) => {
                     iziToast.error({

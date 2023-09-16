@@ -15,7 +15,7 @@
           </li>
           <li class="nav-item active">
               <a class="nav-link" href="{{ route('bo-pj') }}">
-                  <img src="{{ asset('assets/images/icons/2.png') }}" alt="">
+                  <img src="{{ asset('assets/images/icons/6.png') }}" alt="">
                   <span class="menu-title">Penanggung Jawab</span>
               </a>
           </li>

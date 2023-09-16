@@ -18,6 +18,7 @@
   <div class=" container-scroller">
     <!-- partial:partials/_navbar.html -->
     @include('layout.navbar')
+    {{-- @include('layout.header') --}}
 
     <!-- partial -->
     <div class="container-fluid">
@@ -45,9 +46,6 @@
 </body>
 @include('layout.footer')
   <script>
-    $(document).ready(function () {
-      $('#tabel-data').DataTable()
-    })
 
     function logout(){
         Swal.fire({

@@ -59,14 +59,13 @@
         })
 
         function getAllData() {
-            // $('#table-data').DataTable().destroy()
+            $('#tabel-data').DataTable().destroy()
             $.get(`${baseUrl}/api/v1/letter`, (res) => {
                     let data = res.data
 
                     $('#tb-body').html('')
                     if (data.length > 0) {
                         $.each(data, (i, d) => {
-                            if (d.nomor_surat) { // Check if nomor_surat is defined
                             $('#tb-body').append(`
                                 <tr>
                                     <td style="width: 20px">${i + 1}</td>
@@ -80,20 +79,10 @@
                                     </td>
                                 </tr>
                             `);
-                            }
-                        })
-                    } else {
-                        $('#tb-body').append(`
-                <tr>
-                    <td colspan="6" style="text-align: center">
-                        Data tidak ditemukan <br>
-                        Silahkan tambah data terlebih dahulu
-                    </td>
-                </tr>
-            `)
+                        });
                     }
 
-                    // $('#table-data').DataTable();
+                    $('#tabel-data').DataTable()
                 })
                 .fail((err) => {
                     iziToast.error({

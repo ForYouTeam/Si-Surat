@@ -205,7 +205,7 @@ function postData() {
 }
 
 function getAllData() {
-    // $('#table-data').DataTable().destroy()
+    $('#tabel-data').DataTable().destroy()
     $.get(`${baseUrl}/api/v1/users`, (res) => {
         let data = res.data
 
@@ -236,7 +236,7 @@ function getAllData() {
         `)
         }
 
-        // $('#table-data').DataTable();
+        $('#tabel-data').DataTable();
     })
     .fail((err) => {
         iziToast.error({
